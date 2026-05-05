@@ -43,8 +43,9 @@ const routes = [
   }
 ]
 
+// Use hash history for GitHub Pages compatibility
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/clinic-checkin/'),
   routes
 })
 
