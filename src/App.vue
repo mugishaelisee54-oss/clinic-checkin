@@ -1,65 +1,8 @@
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted } from 'vue'
-import { RouterView } from 'vue-router'
-
-// Search functionality
-const searchQuery = ref('')
-const searchResults = ref<any[]>([])
-const selectedLanguage = ref('en')
+import { ref, reactive } from 'vue'
 
 // Language functionality
 const currentLanguage = ref('en')
-
-const translations = {
-  en: {
-    clinicName: 'Mahoko Clinic',
-    tagline: 'Quality Healthcare for All',
-    welcome: 'Welcome to Mahoko Clinic',
-    subtitle: 'Your trusted healthcare partner in Rubavu District, providing quality medical care with compassion and excellence.',
-    checkInNow: 'Check-In Now',
-    bookAppointment: 'Book Appointment',
-    services: 'Services',
-    gallery: 'Gallery',
-    location: 'Location',
-    doctors: 'Doctors',
-    appointment: 'Appointment',
-    emergency: 'Emergency',
-    about: 'About',
-    contact: 'Contact'
-  },
-  fr: {
-    clinicName: 'Clinique Mahoko',
-    tagline: 'Soins de Santé de Qualité pour Tous',
-    welcome: 'Bienvenue à la Clinique Mahoko',
-    subtitle: 'Votre partenaire de confiance en matière de santé dans le district de Rubavu, fournissant des soins médicaux de qualité avec compassion et excellence.',
-    checkInNow: 'Enregistrement Maintenant',
-    bookAppointment: 'Prendre Rendez-vous',
-    services: 'Services',
-    gallery: 'Galerie',
-    location: 'Localisation',
-    doctors: 'Médecins',
-    appointment: 'Rendez-vous',
-    emergency: 'Urgence',
-    about: 'À Propos',
-    contact: 'Contact'
-  },
-  rw: {
-    clinicName: 'Kliniku ya Mahoko',
-    tagline: 'Serivisi za Ubuvuzi bwiza kuri Buri wese',
-    welcome: 'Murakaza neza kuri Kliniku ya Mahoko',
-    subtitle: 'Umufasha wanyu wubuvuzi mu Karere ka Rubavu, ukora serivisi nziza zubuvuzi nubwitizo nubunyangamugayo.',
-    checkInNow: 'Iyandikishe Nonaha',
-    bookAppointment: 'Shaka Umunsi wo Kugenda',
-    services: 'Serivisi',
-    gallery: 'Galeri',
-    location: 'Ahantu',
-    doctors: 'Abaganga',
-    appointment: 'Umunsi wo Kugenda',
-    emergency: 'Ubukungu',
-    about: 'Ibyerekeye',
-    contact: 'Twandikire'
-  }
-}
 
 const changeLanguage = () => {
   // Save language preference to localStorage
